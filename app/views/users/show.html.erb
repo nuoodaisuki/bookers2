@@ -1,0 +1,10 @@
+<%= render 'books/user', user: @user %>
+<%= render 'books/book', book: @book %>
+
+<% @books.each do |book| %>
+  <div>
+    <p><%= image_tag 'no_image.jpg' %></p>
+    <p>Title：<%= book.title %></p>
+    <p>Opinion：<%= book.body %></p>
+  </div>
+<% end %>
