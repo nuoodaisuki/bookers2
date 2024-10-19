@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
   
   def show
-      @user = current_user
-      @books = Book.all
+      @user = User.find(params[:id])
+      @books = @user.books
       @book = Book.new
   end
 
