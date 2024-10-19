@@ -16,7 +16,6 @@ class UsersController < ApplicationController
       redirect_to books_path
     end
     @user = User.find(params[:id])
-    
   end
   
   def update
