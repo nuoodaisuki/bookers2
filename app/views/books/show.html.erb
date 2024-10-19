@@ -4,6 +4,6 @@
 <div>
   <%= image_tag @book.user.get_profile_image(100,100) %>
 <p>name</p>
-<%= @book.title %>
+<%= link_to @book.title, book_path(@user) %>
 <%= @book.body %>
 </div>
