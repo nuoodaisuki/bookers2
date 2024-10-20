@@ -5,9 +5,11 @@
 <%= render 'book', book: @booknew %>
     </div>
     <div class ="col-md-8 offset-md-1">
+      <h1>Book detail</h1>
       <div>
-        <%= image_tag @book.user.get_profile_image(100,100) %>
-        <p>name</p>
+        <%= link_to(user_path(@user)) do %>
+        <%= image_tag(@book.user.get_profile_image(100,100)) %>
+        <% end %>
         <%= link_to @book.title, book_path(@book) %>
         <%= @book.body %>
         <% if @book.user == current_user %>

@@ -6,15 +6,20 @@
     </div>
     <div class ="col-md-8 offset-md-1">
       <h1>Users</h1>
-      <div>
+      <table>
+        <tr>
+          <th>image</th>
+          <th>name</th>
+          <th></th>
+        </tr>
         <% @users.each do |user| %>
-          <p>image</p>
-          <%= image_tag user.get_profile_image(100,100) %>
-          <p>name</p>
-          <%= user.name %>
-          <%= link_to "Show", user_path(user) %>
+        <tr>
+          <td><%= image_tag user.get_profile_image(100,100) %></td>
+          <td><%= user.name %></td>
+          <td><%= link_to "Show", user_path(user) %></td>
+        </tr>
           <% end %>
-      </div>
+      </table>
     </div>
   </div>
 </div>

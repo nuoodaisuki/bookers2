@@ -1,6 +1,14 @@
+<h1>User Info</h1>
 <div>
   <%= image_tag user.get_profile_image(100,100) %>
   <h3>name <%= user.name %></h3>
   <h3>introduction <%= user.introduction %></h3>
-  <%= link_to "編集", edit_user_path(user) %>
+  
+  <div class="text-center">
+  　<span class="border border-secondary">
+    　<%= link_to edit_user_path(user) do %>
+      　<i class="fa-solid fa-user"></i>
+    　<% end %>
+  　</span>
+  </div>
 </div>

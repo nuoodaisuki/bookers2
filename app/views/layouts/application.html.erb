@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    
+    <script src="https://kit.fontawesome.com/a9f61c314b.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -64,7 +65,10 @@
         </div>
       </nav>
     </header>
-    <main><%= yield %></main>
+    <main>
+      <p class="notice"><%= notice %></p>
+      <%= yield %>
+    </main>
     <footer>
       <div class="container mt-5">
         <div class="row">
