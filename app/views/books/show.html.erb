@@ -1,10 +1,20 @@
+<div class ="container">
+  <div class ="row">
+    <div class ="col-md-3">
 <%= render 'user', user: @user %>
-<%= render 'book', book: @book %>
-
-<div>
-  <%= image_tag @book.user.get_profile_image(100,100) %>
-<p>name</p>
-<%= link_to @book.title, book_path(@user) %>
-<%= @book.body %>
-<p><%= link_to "edit", edit_book_path(params[:id]) %></p>
-</div>
+<%= render 'book', book: @booknew %>
+    </div>
+    <div class ="col-md-8 offset-md-1">
+      <div>
+        <%= image_tag @book.user.get_profile_image(100,100) %>
+        <p>name</p>
+        <%= link_to @book.title, book_path(@book) %>
+        <%= @book.body %>
+        <% if @book.user == current_user %>
+          <%= link_to "edit", edit_book_path(params[:id]) %>
+          <%= link_to "destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div

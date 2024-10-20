@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
   
+  def create
+    @book = Book.new(book_params)
+    @book.user_id = current_user.id
+    @book.save
+    redirect_to book_path(@book)
+  end
+  
   def index
     @users = User.all
     @user = current_user
@@ -30,7 +37,7 @@ class UsersController < ApplicationController
     redirect_to books_path
   end
   
-  private
+private
 def user_params
   params.require(:user).permit(:name, :profile_image, :introduction)
 end
