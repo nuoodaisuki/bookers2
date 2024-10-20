@@ -6,4 +6,5 @@
 <p>name</p>
 <%= link_to @book.title, book_path(@user) %>
 <%= @book.body %>
+<p><%= link_to "edit", edit_book_path(params[:id]) %></p>
 </div>
